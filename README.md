@@ -235,7 +235,16 @@ origin https://github.com/P404-Devices/kernel_xiaomi_sm8250.git (fetch)
 origin https://github.com/P404-Devices/kernel_xiaomi_sm8250.git (push)
 ```
 
-## 7. Flashing new compiled kernel
+## 7. Provide root access
+Use the [magisk-app v26.4](https://github.com/topjohnwu/Magisk/releases/tag/v26.4)(this version tested ok) to implant root access. There are many tutorials on the Internet, roughly as follows:
+
+1. Copy the boot image to your device.
+2. Press the **Install** button in the Magisk card.
+3. Choose “**Select and Patch a File**” in method, and select the boot image.
+4. Start the installation, and copy the patched image to your PC using ADB:  
+`adb pull /sdcard/Download/magisk_patched_[random_strings].img`
+
+## 8. Flashing new compiled kernel
 0. It's best to flashed in this ROM([project-404-5.0-20220813-104358-SHINKA-cmi.zip](https://github.com/P404-Devices/device_xiaomi_cmi/releases/download/5.0/project-404-5.0-20220813-104358-SHINKA-cmi.zip)) before, into Xiaomi 10Pro phone. 
 
 1. Restart your phone and enter fastboot mode. There are two ways to enter fastboot mode:
@@ -244,11 +253,11 @@ origin https://github.com/P404-Devices/kernel_xiaomi_sm8250.git (push)
         
         B. Turn off the phone normally, and then press the power button and volume up button together to power-on the phone. It will enter into recovery mode.
 
-2. Connect to the computer, execute the command `fastboot flash boot new kernel.img`, and flash into the new compiled kernel.
+2. Connect to the computer, execute the command `fastboot flash boot new boot.img`, and flash into the new compiled kernel.
 
 3. Execute the `fastboot reboot`, and the phone will restart normally.
 
-## 8. Recompile the kernel
+## 9. Recompile the kernel
 
 If you want to recompile the kernel again, you can delete this directory. It will clean up the previous compilation. The command is:
 
@@ -256,12 +265,13 @@ If you want to recompile the kernel again, you can delete this directory. It wil
 rm  -rf  /root/p-404/out
 ```
 
-## 9. The rom that has been modified to support docker
+## 10. The rom that has been modified to support docker
 
-Considering that someone only need the final result ROM package and won't compile kernel. The rom that support docker has released:  
-https://github.com/hengwu0/cmi-p404-docker-enabled/releases/
+Considering that someone only need the final result ROM package and won't compile kernel. The full rom that support docker has released:  
+https://github.com/hengwu0/cmi-p404-docker-enabled/releases/  
+You can use the full rom, or unzip it and get boot.img from it.
 
-## 10. Steps to install docker on your phone
+## 11. Steps to install docker on your phone
 
 Goto: https://blog.csdn.net/whgjjim/article/details/134687390 
 
