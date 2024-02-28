@@ -277,3 +277,7 @@ Goto: https://blog.csdn.net/whgjjim/article/details/134687390
 
 tips. If you want to use phone as an server, your device will connect the power adapter 7\*24 hours. Which may cause battery damaged or exploded. 
 But, If we handle it properly, it's like giving our server a built-in UPS. If you need support, please email me: w._heng@163.com , $50 for beer.
+
+## 12. Thanks
+
+Thanks to P-404 team and Android OpenSource and Xiaomi, for your open spirit.
